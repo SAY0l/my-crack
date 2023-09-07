@@ -34,7 +34,7 @@ GLOBAL OPTIONS:
 ## Use
 当前核心支持ftp/mongodb/mysql/mssql/postgre/redis/ssh的弱口令扫描
 
-提供了编译后的版本。
+提供了编译后的版本。输入支持默认服务端口和指定服务端口，输出支持常规输出，同时会生成db文件
 
 后续版本开放代码
 
