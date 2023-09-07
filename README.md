@@ -49,9 +49,9 @@ GLOBAL OPTIONS:
 4. 对于不支持设置超时的扫描插件，如何统一设置超时时间
 ```
 
-1. 利用hash来完成的。在redis，ftp这种可以仅记录密码的就以（ip-port-protocol）进行hash，其他带用户名的以（ip-port-username）进行hash，查hash来作为规避条件，一旦结果集的hash已经存在和当前扫描产生的hash值相同，就continue
+1. 利用hash来完成的。在redis，ftp这种可以仅记录密码的就以（ip-port-protocol）进行hash，其他带用户名的以（ip-port-username）进行hash，查hash来作为规避条件，一旦结果集的hash已经存在和当前扫描产生的hash值相同，就continue。
 
-2. 基于上述原理，就可以实现redis、ftp 只记录一个密码，不会把所有用户名都记录下来，因为是用ip-port-protocol 进行hash
+2. 基于上述原理，就可以实现redis、ftp 只记录一个密码，不会把所有用户名都记录下来，因为是用ip-port-protocol 进行hash。
 
 4. 设计了一个WaitTimeout函数。
 ```
@@ -94,7 +94,9 @@ ipListFile, err := os.Open(fileName)
 
 之前版本大量复用err，会出现err覆盖问题，有必要的err取消覆盖写法。
 
-## 待优化点
-优化算法需要优化，使用waitgroup虽然快，但是协程的突然开关闭过于频繁。
+## Ver 1.2 待优化点
+代码上线
+
+并发算法需要优化
 
 更多服务的支持 smb,elastic ...
